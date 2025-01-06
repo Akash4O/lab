@@ -1,0 +1,11 @@
+#include <iostream>
+#include <unistd.h>
+using namespace std;
+
+int main() {
+   pid_t pid = fork();
+   if (pid == 0) exit(0); // Child exits immediately
+   sleep(5); // Allow time for parent to see child as zombie
+   system("ps -o pid,state"); // Check for zombie process
+   return 0;
+}
