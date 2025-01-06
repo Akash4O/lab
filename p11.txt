@@ -1,0 +1,9 @@
+arr=(64 34 25 12 22 11 90)
+read -p "Enter number to search: " key
+for i in "${!arr[@]}"; do
+    if [ "${arr[$i]}" -eq "$key" ]; then
+        echo "Found at position $i"
+        exit 0
+    fi
+done
+echo "Not found"
