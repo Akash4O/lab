@@ -1,0 +1,12 @@
+clear
+p1=`ls -l $1 | cut -c 2-10`
+p2=`ls -l $2 | cut -c 2-10`
+if [ "$p1" = "$p2" ]
+then
+echo File permissions of $1 and $2 are identical.
+echo $p1
+else
+echo File permissions of $1 and $2 are not identical.
+echo "$1 permissions are: $p1"
+echo "$2 permissions are: $p2
+fi
