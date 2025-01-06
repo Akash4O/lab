@@ -1,0 +1,7 @@
+if [ -d "$1" ]; then
+    echo "Directory"
+elif [ -f "$1" ]; then
+    echo "Regular file"
+else
+    echo "Other type"
+fi
