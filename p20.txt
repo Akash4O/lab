@@ -1,0 +1,16 @@
+#include <iostream>
+#include <sys/wait.h>
+#include <unistd.h>
+
+int main() {
+   pid_t pid = fork();
+   
+   if (pid == 0)
+       exit(23); // Child exits with status
+   
+   int status;
+   wait(&status); // Parent waits for child to finish
+   std::cout << "Exit status: " << WEXITSTATUS(status) << endl;
+
+   return 0;
+}
