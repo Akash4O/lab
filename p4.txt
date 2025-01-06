@@ -1,0 +1,6 @@
+for file in "$@"; do
+    if [ -f "$file" ]; then
+        tr '[:lower:]' '[:upper:]' < "$file" > temp
+        mv temp "$file"
+    fi
+done
