@@ -1,0 +1,9 @@
+#include <iostream>
+#include <unistd.h>
+using namespace std;
+
+int main(int argc, char* argv[]) {
+    if (argc != 3) return 1;
+    link(argv[1], argv[2]);
+    return 0;
+}
