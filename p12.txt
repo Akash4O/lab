@@ -1,0 +1,19 @@
+clear
+max(){
+max=$1
+if [ $1 -lt $2 ]
+then
+max=$2
+fi
+if [ $max -lt $3 ]
+then
+max=$3
+fi
+return $max
+}
+
+echo Enter 3 numbers:
+read n1
+read n2
+read n3
+max3 $n1 $n2 $n3
