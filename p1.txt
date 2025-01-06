@@ -1,0 +1,7 @@
+clear
+echo Enter sid, sname, sem, dept separated by colon
+cat > db.txt
+echo name dept
+cut -d ":" -f2,4 db.txt
+echo count dept
+cut -d ":" -f4 db.txt | sort|uniq -c
