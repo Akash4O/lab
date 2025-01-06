@@ -1,0 +1,12 @@
+clear
+echo Enter the number
+read n
+rev=0
+nc=$n
+while [ $n -gt 0 ]
+do
+dig='expr $n%10'
+rev='expr $rev \* 10 + dig'
+n='expr $n/10'
+done
+echo Reverse of $nc is $rev
