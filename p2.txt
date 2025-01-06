@@ -1,0 +1,4 @@
+if cmp -s "$1" "$2"; then
+rm "$2"
+echo "Files were identical. Second file removed."
+fi
