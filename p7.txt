@@ -1,0 +1,9 @@
+clear
+echo Given arguments are $*
+rev=” “
+for var in $*
+$*
+do
+rev=$var” “$rev
+done
+echo Arguments in reversed order are: $rev
