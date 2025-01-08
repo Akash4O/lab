@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+typedef struct {
+    int reg, age, marks[5];
+    char name[100];
+    float sgpa;
+} student;
+
+void read_Students(student *s) {
+    printf("Enter name, regno, age, and 5 subject marks: ");
+    scanf("%s %d %d", s->name, &s->reg, &s->age);
+    s->sgpa = 0;
+    for (int i = 0; i < 5; i++) {
+        scanf("%d", &s->marks[i]);
+        s->sgpa += s->marks[i];
+    }
+    s->sgpa /= 50.0f;
+}
+
+void print_student(const student *s) {
+    printf("Name: %s, Reg No: %d, Age: %d, SGPA: %.2f\n",
+           s->name, s->reg, s->age, s->sgpa);
+}
+
+int main() {
+    student s;
+    read_Students(&s);
+    print_student(&s);
+    return 0;
+}
